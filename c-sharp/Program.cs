@@ -9,7 +9,7 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-void ArrayPrint(string[] arr)
+void PrintArray(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
@@ -46,22 +46,22 @@ void CheckForThreCharInStringArray(string[] arr)
     }
     else
     {
-        ArrayPrint(GetArrayFromStringLessThreeChar(arr, validationCount));
+        PrintArray(GetArrayFromStringLessThreeChar(arr, validationCount));
     }
 }
 
 string[] firstArray = new string[] { "Hello", "2", "world", ":-)" };
 string[] secondArray = new string[] { "1234", "1567", "-2", "computer science" };
 string[] thirdArray = new string[] { "Russia", "Denmark", "Kazan" };
-ArrayPrint(firstArray);
+PrintArray(firstArray);
 System.Console.WriteLine();
 CheckForThreCharInStringArray(firstArray);
 System.Console.WriteLine();
-ArrayPrint(secondArray);
+PrintArray(secondArray);
 System.Console.WriteLine();
 CheckForThreCharInStringArray(secondArray);
 System.Console.WriteLine();
-ArrayPrint(thirdArray);
+PrintArray(thirdArray);
 System.Console.WriteLine();
 CheckForThreCharInStringArray(thirdArray);
 System.Console.WriteLine();
