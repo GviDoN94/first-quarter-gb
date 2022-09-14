@@ -17,18 +17,37 @@ void ArrayPrint(string[] arr)
     }
 }
 
-string[] StringOfThreeChar(string[] arr)
+string[] GetArrayFromStringLessThreeChar(string[] arr, int size)
 {
-    string[] newArr = new string[5];
+    string[] newArr = new string[size];
     for (int i = 0, count = 0; i < arr.Length; i++)
     {
         if (arr[i].Length <= 3)
         {
             newArr[count] = arr[i];
-            count++;
         }
     }
     return newArr;
+}
+
+void CheckForThreCharInStringArray(string[] arr)
+{
+    int validationCount = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length <= 3)
+        {
+            validationCount++;
+        }
+    }
+    if (validationCount == 0)
+    {
+        System.Console.WriteLine("В массиве нет подходящих элементров");
+    }
+    else
+    {
+        ArrayPrint(GetArrayFromStringLessThreeChar(arr, validationCount));
+    }
 }
 
 string[] firstArray = new string[] { "Hello", "2", "world", ":-)" };
@@ -36,4 +55,13 @@ string[] secondArray = new string[] { "1234", "1567", "-2", "computer science" }
 string[] thirdArray = new string[] { "Russia", "Denmark", "Kazan" };
 ArrayPrint(firstArray);
 System.Console.WriteLine();
-ArrayPrint(StringOfThreeChar(thirdArray));
+CheckForThreCharInStringArray(firstArray);
+System.Console.WriteLine();
+ArrayPrint(secondArray);
+System.Console.WriteLine();
+CheckForThreCharInStringArray(secondArray);
+System.Console.WriteLine();
+ArrayPrint(thirdArray);
+System.Console.WriteLine();
+CheckForThreCharInStringArray(thirdArray);
+System.Console.WriteLine();
